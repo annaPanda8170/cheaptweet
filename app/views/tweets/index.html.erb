@@ -1,1 +1,3 @@
-<div>※確認用</div>
+<% @tweets.each do |t| %>
+  <div><span style="color: red;"><%= t.user.nickname %></span><%= t.text %></div>
+<% end %>

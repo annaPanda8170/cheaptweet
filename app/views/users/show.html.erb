@@ -1,0 +1,5 @@
+<p><%= @nickname %>の投稿一覧</p>
+<% @tweets.each do |t| %>
+  <div><%= link_to tweet_path(t.id) do %><%= t.text %><% end %></div>
+<% end %>
+<%= paginate(@tweets) %>

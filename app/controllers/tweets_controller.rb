@@ -17,6 +17,8 @@ class TweetsController < ApplicationController
   end
   def show
     @tweet = Tweet.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(tweet_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
   end
   def edit
     @tweet = Tweet.find(params[:id])

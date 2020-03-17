@@ -1,3 +1,3 @@
 <% @tweets.each do |t| %>
-  <div><span style="color: red;"><%= t.user.nickname %></span><%= t.text %></div>
+  <div><%= link_to tweet_path(t.id) do %><span style="color: red;"><%= t.user.nickname %></span><%= t.text %><% end %></div>
 <% end %>

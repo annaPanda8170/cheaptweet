@@ -1,3 +1,4 @@
 <% @tweets.each do |t| %>
   <div><%= link_to tweet_path(t.id) do %><span style="color: red;"><%= t.user.nickname %></span><%= t.text %><% end %></div>
 <% end %>
+<%= paginate(@tweets) %>

@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :unless_signin, only: [:new, :create,]
   before_action :unless_mytweet, only: [:edit, :update, :destroy]
   def index
-    @tweets = Tweet.all.includes(:user).order("created_at DESC")
+    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
   def new
     @tweet = Tweet.new

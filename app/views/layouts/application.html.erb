@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheaptweet</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header style="height: 50px; background-color: grey;">
+      <% if user_signed_in? %>
+        <%= current_user.nickname %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "会員登録", new_user_registration_path %>
+      <% end %>
+      <%= link_to "トップへ", root_path, style:"float: right;" %>
+    </header>
+    <%= yield %>
+  </body>
+</html>

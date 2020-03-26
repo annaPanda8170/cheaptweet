@@ -27,14 +27,9 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-
-
-desc 'Restart application'
-  task :restart do
     on roles(:app) do
-    invoke 'unicorn:restart'
+      invoke 'unicorn:restart'
+    end
   end
 end
+

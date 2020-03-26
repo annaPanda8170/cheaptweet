@@ -30,3 +30,11 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+
+desc 'Restart application'
+  task :restart do
+    on roles(:app) do
+    invoke 'unicorn:restart'
+  end
+end

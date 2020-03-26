@@ -8,8 +8,6 @@ set :branch, 'ツイッター風Railsアプリをデプロイする'
 
 set :deploy_to, '/var/www/cheaptweet'
 
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
-
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user

@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header style="height: 50px; background-color: grey;">
+    <header style="height: 50px; background-color: green;">
       <% if user_signed_in? %>
         <%= link_to user_path(current_user.id) do %><%= current_user.nickname %><% end %>
         <%= link_to "投稿", new_tweet_path %>
